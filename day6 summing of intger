@@ -1,0 +1,20 @@
+include<stdio.h>
+int main()
+{
+	int arr[10],n,sum=0,i,mod;
+	printf("enter the n value:");
+	scanf("%d",&n);
+	printf("enter the %d digits:",n);
+	for(i=0;i<=n;i++)
+	{
+		scanf("%d",&arr[i]);
+	while(arr[i] > 0) 
+    {
+         mod = arr[i] % 10; 
+		 sum=sum+mod;  
+        arr[i] = arr[i] / 10;  
+    }
+    printf("sum is = %d",sum);
+}
+    return 0;
+}
