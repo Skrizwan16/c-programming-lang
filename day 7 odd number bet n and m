@@ -1,0 +1,20 @@
+#include<stdio.h>  
+int main()  
+{  
+    int n, m, temp, count;  
+    printf("Enter n and m value, to find odd numbers\n");  
+    scanf("%d%d", &n, &m);  
+    if(n > m)  
+    {  
+        temp  = n;  
+        n = m;  
+        m  = temp;  
+    }  
+    printf("Odd numbers between %d and %d are\n", n, m);  
+    for(count = n; count <= m; count++)  
+    {  
+        if(count % 2 != 0)  
+            printf("%d\n", count);  
+    }  
+    return 0;  
+}
