@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+long Calculate_Factorial(int); 
+
+int main()
+{
+  int Number, Temp, Reminder, Sum = 0; 
+  long Factorial;
+ 
+  printf("\nPlease Enter a Number to Check \n");
+  scanf("%d", &Number);
+  
+  Temp = Number;
+  for(Temp = Number; Temp > 0; Temp =  Temp / 10 )
+  {
+     Factorial = 1;  
+     Reminder = Temp % 10;
+
+     Factorial = Calculate_Factorial(Reminder);
+
+     printf("Factorial of %d = %d\n", Reminder, Factorial);
+     Sum = Sum + Factorial;
+   }
+ 
+   printf("\nSum of the Factorials of %d is = %d\n", Number, Sum);
+ 
+   if ( Number == Sum )
+      printf("\n%d is a Strong.\n", Number);
+   else
+      printf("\n%d is not.\n", Number);
+ 
+   return 0;
+}
+
+long Calculate_Factorial(int Number)
+{ 
+  if (Number == 0 || Number == 1)  
+    return 1;
+  
+  else
+    return Number * Calculate_Factorial (Number -1);
+}
